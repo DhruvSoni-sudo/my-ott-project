@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Netflix Landing Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='victor.css') }}">
+</head>
+<body>
+    <div class="outer-container">
+        <!-- Header -->
+        <header class="header">
+            <nav class="logo">
+                <img src="{{ url_for('static', filename='victor.png') }}" alt="Victor Logo" />
+                <a href="{{ url_for('signup') }}" class="btn">Sign In</a>
+            </nav>
+
+            <div class="inner-container">
+                <div class="inner-title">
+                    <h1>Endless Entertainment, Anytime, Anywhere!</h1>
+                </div>
+                <div class="inner-text">
+                    <p>Limitless Stories, Just a Click Away!</p>
+                </div>
+
+                <div class="email-form">
+                    <p>Why Wait? Enter Your Email & Unlock Endless Fun!</p>
+                    <div class="get-started">
+                        <input type="email" placeholder="Email address" required />
+                        <a href="{{ url_for('signup') }}" class="btn-lg">
+                          Let’s Go! <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay"></div>
+        </header>
+
+        <!-- Showcase 1 -->
+        <section class="showcase">
+            <div class="showcase-container">
+                <div class="inner-container">
+                    <div class="inner-title">
+                        <h1>Your TV, Your Theater!</h1>
+                    </div>
+                    <div class="inner-text">
+                        <p>Big Screen or Small, Your Entertainment Follows You!</p>
+                    </div>
+                </div>
+                <div class="showcase-img">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV">
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase 2 -->
+        <section class="showcase">
+            <div class="showcase-container">
+                <div class="showcase-img">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="Mobile">
+                    <div class="downloading">
+                        <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" alt="Downloading">
+                        <div class="download-text">
+                            <h1>Stranger Things</h1>
+                            <p>Downloading...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner-container">
+                    <div class="inner-title">
+                        <h1>Download your shows to watch offline.</h1>
+                    </div>
+                    <div class="inner-text">
+                        <p>Save your favorites easily and always have something to watch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="inner-container">
+                <div class="inner-title">
+                    <h1>Frequently Asked Questions</h1>
+                </div>
+                <ul>
+                    <li>
+                        <h2>What is VICTOR? <i class="fas fa-plus"></i></h2>
+                        <p>**VICTOR** is a premier streaming powerhouse, delivering an expansive library of TV shows, blockbuster movies, anime, and more—bringing unlimited entertainment to your fingertips! 🚀🎬.</p>
+                    </li>
+                    <li>
+                        <h2>How much does VICTOR cost? <i class="fas fa-plus"></i></h2>
+                        <p>🔹 Basic – ₹199/month – 720p – 1 Device – Ads – No Download
+                          🔹 Standard – ₹399/month – 1080p – 2 Devices – No Ads – No Download
+                          🔹 Premium – ₹699/month – 4K HDR – 4 Devices – No Ads – Offline Download
+                          🔹 Free Plan – ₹0 – 480p – 1 Device – Ads – No DownloadPlans range from TWD270 to TWD390 a month. No extra costs, no contracts.</p>
+                    </li>
+                    <li>
+                        <h2>Where can I stream? <i class="fas fa-plus"></i></h2>
+                        <p>Watch on your smartphone, tablet, Smart TV, laptop, or streaming device anytime.</p>
+                    </li>
+                    <li>
+                        <h2>How do I cancel? <i class="fas fa-plus"></i></h2>
+                        <p>No contracts, cancel anytime with two clicks.</p>
+                    </li>
+                </ul>
+
+                <div class="email-form">
+                    <p>"Excited to start streaming? Enter your email to sign up or reactivate your membership!"</p>
+                    <div class="get-started">
+                        <input type="email" placeholder="Email address" required />
+                        <a href="{{ url_for('signup') }}" class="btn-lg">
+                            Get started <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Questions? Contact us.</p>
+            <ul class="links">
+                <li>FAQ</li>
+                <li>Help Center</li>
+                <li>Account</li>
+                <li>Media Center</li>
+                <li>Investor Relations</li>
+                <li>Jobs</li>
+                <li>Ways to Watch</li>
+                <li>Terms of Use</li>
+                <li>Privacy</li>
+                <li>Cookie Preferences</li>
+                <li>Contact Us</li>
+            </ul>
+            <div class="language">
+                <i class="fas fa-globe"></i> English
+            </div>
+            <p>VICTOR Jaipur</p>
+        </footer>
+    </div>
+</body>
+</html>

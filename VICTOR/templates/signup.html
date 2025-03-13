@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Netflix Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='victor.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="logo">
+            <img src="{{ url_for('static', filename='image.png') }}" alt="Netflix">
+        </nav>
+        <div class="signin-container">
+            <form class="signin-form" method="POST">
+                <h1>Sign Up</h1>
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <div class="help-text">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+                <a href="#">Need help?</a>
+            </div>
+            <div class="signup-text">
+                <p>Already have an account?
+                    <a href="{{ url_for('signin') }}">Sign in now.</a>
+                </p>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
