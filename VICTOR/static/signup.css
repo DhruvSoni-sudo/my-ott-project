@@ -1,0 +1,103 @@
+.header {
+    height: 110vh;
+    position: relative;
+    background: url("https://th.bing.com/th/id/OIP.BWN9XB5Uv4spBLz_heIH3QHaFj?w=212&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7")
+      no-repeat center center/cover;
+    box-shadow: inset 0 50px 300px #000, inset 0 -50px 300px #000;
+    border-bottom: 10px #333 solid;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .logo > img {
+    width: 150px;
+  }
+  
+  body {
+    background-color: #141414;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .signin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .signin-form {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .signin-form h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  .signin-form input {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .signin-form input::placeholder {
+    color: #aaa;
+  }
+  
+  .signin-form button {
+    width: 100%;
+    padding: 15px;
+    background: #0000ff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .signin-form button:hover {
+    background: #0004ff;
+  }
+  
+  .signin-form .signup-text {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .signin-form .signup-text a {
+    color: #fff;
+    text-decoration: underline;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .signin-form .help-text {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+  }

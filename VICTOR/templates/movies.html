@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Movies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='movies.css') }}">
+</head>
+<body>
+    <div class="movies-container">
+        <h2>🎬 Manage Movies</h2>
+        <button onclick="showAddMovieForm()">➕ Add Movie</button>
+        
+        <div id="add-movie-form" class="hidden">
+            <h3>Add New Movie</h3>
+            <input type="text" id="movie-title" placeholder="Movie Title">
+            <input type="text" id="movie-genre" placeholder="Genre">
+            <input type="number" id="movie-year" placeholder="Year">
+            <button onclick="addMovie()">Add</button>
+            <button onclick="hideAddMovieForm()">Cancel</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Year</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="movies-list"></tbody>
+        </table>
+    </div>
+    
+    <script src="{{ url_for('static', filename='movies.js') }}"></script>
+</body>
+</html>

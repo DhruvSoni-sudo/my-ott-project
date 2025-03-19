@@ -1,20 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-from werkzeug.security import generate_password_hash, check_password_hash
 from flask_session import Session
 import os
 
 app = Flask(__name__, template_folder='templates')  # Specify the folder explicitly
 
-# Secret key for session management
-app.config['SECRET_KEY'] = 'your_secret_key'
+# Secret key for session management (Better to store in .env file)
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY", "your_secret_key")
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Database setup (SQLite)
-app.config['SQLALCHEMY_DATABASE_URI'] = r'sqlite:///users.db'  # Fixed URI
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'  # Fixed URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -73,6 +72,7 @@ def signin():
 
         if user and bcrypt.check_password_hash(user.password, password):
             session['user_id'] = user.id  # Store user ID in session
+            print("Session Data After Login:", session)  # Debugging purpose
             flash('Logged in successfully!', 'success')
             return redirect(url_for('admin_dashboard'))
         else:
@@ -89,19 +89,24 @@ def admin_dashboard():
         return redirect(url_for('signin'))
     return render_template('admin.html')  # Ensure admin.html is correctly loading
 
-@app.route('/dashboard_page')
-def dashboard_page():
-    return "<h2>Welcome to Admin Dashboard</h2>"  # Replace with a proper template later
+# Fixed: Missing return statement
+@app.route('/overview')
+def overview():
+    return render_template('overview.html')  # Fixed return issue
 
+@app.route('/movies')
+def movies():
+    return render_template('movies.html')
 
-@app.route('/user')
-def user_():
-    return render_template('user.html')
-    pass
+@app.route('/users')  # URL path
+def user():
+    return render_template('user.html')  # HTML file ka naam
 
+# Logout Route
 @app.route('/logout')
 def logout():
-    session.pop('user_id', None)  # Clear session on logout
+    session.clear()  # Clear all session data
+    print("Session Data After Logout:", session)  # Debugging purpose
     flash('Logged out successfully!', 'info')
     return redirect(url_for('index'))
 

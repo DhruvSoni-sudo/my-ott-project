@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Overview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='overview.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>📊 Admin Overview</h1>
+
+    <!-- Quick Stats -->
+    <div class="stats-container">
+        <div class="stat-box">🎬 Total Movies: <span id="total-movies">0</span></div>
+        <div class="stat-box">👥 Registered Users: <span id="total-users">0</span></div>
+        <div class="stat-box">⏳ Total Watch Hours: <span id="watch-hours">0</span> hrs</div>
+        <div class="stat-box">📊 Avg. Session Duration: <span id="session-duration">0</span> mins</div>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="chart-container">
+        <h3>Movies by Category</h3>
+        <canvas id="moviesCategoryChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>Active Users (Last 30 Days)</h3>
+        <canvas id="activeUsersChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>New Users Per Month</h3>
+        <canvas id="newUsersChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>Most Watched Movies</h3>
+        <ul id="most-watched-list"></ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='overview.js') }}"></script>
+</body>
+</html>

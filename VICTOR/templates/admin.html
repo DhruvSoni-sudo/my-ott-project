@@ -5,45 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="admin-container">
         <div class="sidebar">
             <h1>Admin Panel</h1>
             <ul>
-                <li class="active" data-section="dashboard">📊 Dashboard</li>
-                <li data-section="users">👤 Manage Users</li>
-                <li data-section="movies">🎥 Manage Movies</li>
-                <li data-section="subscriptions">💳 Subscriptions</li>
-                <li data-section="logout">🚪 Logout</li>
-            </ul>
+                <li class="active"><a href="{{ url_for('overview') }}" target="content-frame">📊 Overview</a></li>
+                <li><a href="{{ url_for('user') }}" target="content-frame">🎥 Manage Users</a></li>
+                <li><a href="{{ url_for('movies') }}" target="content-frame">🎥 Manage Movies</a></li>
+                <li><a href="{{ url_for('logout') }}">🚪 Logout</a></li>
+            </ul>                      
         </div>
         
         <div class="main-content">
-            <iframe id="content-frame" src="dashboard.html" frameborder="0" title="Admin Content"></iframe>
+            <iframe id="content-frame" src="{{ url_for('overview') }}" frameborder="0" title="Admin Content"></iframe>
         </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sidebarItems = document.querySelectorAll(".sidebar ul li");
-            const contentFrame = document.getElementById("content-frame");
-            
-            sidebarItems.forEach(item => {
-                item.addEventListener("click", () => {
-                    sidebarItems.forEach(el => el.classList.remove("active"));
-                    item.classList.add("active");
-                    const section = item.getAttribute("data-section");
-                    
-                    if (section === "logout") {
-                        window.location.href = "logout.html"; 
-                    } else {
-                        contentFrame.src = `${section}.html`;
-                    }
-                });
-            });
-        });
-    </script>
-    <script src="{{ url_for('static', filename='admin.js') }}"></script>
+<script src="{{ url_for('static', filename='admin.js') }}"></script>
 </body>
 </html>
